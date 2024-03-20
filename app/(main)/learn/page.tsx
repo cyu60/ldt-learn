@@ -1,6 +1,22 @@
 "use client";
 
+import { FeedWrapper } from "@/components/feed-wrapper";
+import { StickyWrapper } from "@/components/sticky-wrapper";
 import { useEffect, useMemo, useState } from "react";
+import { Header } from "./header";
+
+const LearnPage = () => {
+  return (
+    <div className="flex flex-row gap-12 px-6">
+      <FeedWrapper>
+        {" "}
+        Feed
+        <Header title="Feed header"></Header>
+      </FeedWrapper>
+      <StickyWrapper>Sticky</StickyWrapper>
+    </div>
+  );
+};
 
 const Page: React.FC = () => {
   const shapes = useMemo(
@@ -9,25 +25,25 @@ const Page: React.FC = () => {
         title: "Square",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Square_-_black_simple.svg/768px-Square_-_black_simple.svg.png",
-        keyTrigger: "a",
+        keyTrigger: "ArrowLeft",
       },
       {
         title: "Circle",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Circle_-_black_simple_fullpage.svg/768px-Circle_-_black_simple_fullpage.svg.png",
-        keyTrigger: "b",
+        keyTrigger: "ArrowUp",
       },
       {
         title: "Triangle",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Regular_triangle.svg/800px-Regular_triangle.svg.png",
-        keyTrigger: "c",
+        keyTrigger: "ArrowRight",
       },
       {
-        title: "Trapezoid",
+        title: "Pentagon",
         imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Trapezoid.svg/1200px-Trapezoid.svg.png",
-        keyTrigger: "d",
+          "https://cdn.mathblog.com/wp-content/uploads/2017/03/pentagon.jpeg",
+        keyTrigger: "ArrowDown",
       },
     ],
     []
@@ -61,7 +77,7 @@ const Page: React.FC = () => {
     const handleKeyPress = (event: KeyboardEvent) => {
       const shape = shapes.find((shape) => shape.keyTrigger === event.key);
       if (shape && shape.title === currentShape.title) {
-        setScore(score + 1);
+        setScore((prevScore) => prevScore + 1);
         // setPreviousShape(currentShape);
       }
       // Move to the next shape regardless of whether the choice was correct
@@ -135,4 +151,5 @@ const Page: React.FC = () => {
   );
 };
 
+// export default LearnPage;
 export default Page;
