@@ -164,7 +164,7 @@ const Page: React.FC = () => {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              {questions[currentQuestionIndex]?.question ?? "Quiz Complete!"}
+              {questions[currentQuestionIndex]?.question ? (`(${currentQuestionIndex+1} / ${questions.length})` + questions[currentQuestionIndex].question) : "Quiz Complete!"}
             </h2>
             <p className="mt-2 text-lg leading-8 text-gray-600">
               Your Score: {score}
