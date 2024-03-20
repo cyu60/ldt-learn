@@ -26,24 +26,28 @@ const Page: React.FC = () => {
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Square_-_black_simple.svg/768px-Square_-_black_simple.svg.png",
         keyTrigger: "ArrowLeft",
+        color: "border-green-500",
       },
       {
         title: "Circle",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Circle_-_black_simple_fullpage.svg/768px-Circle_-_black_simple_fullpage.svg.png",
         keyTrigger: "ArrowUp",
+        color: "border-blue-500",
       },
       {
         title: "Triangle",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Regular_triangle.svg/800px-Regular_triangle.svg.png",
         keyTrigger: "ArrowRight",
+        color: "border-red-500",
       },
       {
         title: "Pentagon",
         imageUrl:
           "https://cdn.mathblog.com/wp-content/uploads/2017/03/pentagon.jpeg",
         keyTrigger: "ArrowDown",
+        color: "border-yellow-500",
       },
     ],
     []
@@ -134,14 +138,19 @@ const Page: React.FC = () => {
             {shapes.map((shape) => (
               <div
                 key={shape.title}
-                className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-80 sm:pt-48 lg:pt-80"
+                className={
+                  "relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-80 sm:pt-48 lg:pt-80 border-8 " +
+                  shape.color
+                }
                 onClick={() => handleShapeClick(shape.title)}
               >
-                <img
-                  src={shape.imageUrl}
-                  alt=""
-                  className="absolute inset-0 -z-10 h-full w-full object-contain"
-                />
+                <div className="m-4">
+                  <img
+                    src={shape.imageUrl}
+                    alt=""
+                    className="absolute inset-0 -z-10 h-full w-full object-contain"
+                  />
+                </div>
               </div>
             ))}
           </div>
