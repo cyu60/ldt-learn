@@ -30,7 +30,7 @@ const Page: React.FC = () => {
           "Prioritizing digital creation over physical creation",
         ],
         correctAnswer: "Learning and growth",
-        keyTriggers: ["ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown"],
+        keyTriggers: ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"],
       },
       {
         question:
@@ -42,7 +42,7 @@ const Page: React.FC = () => {
           "Reduction in downtime in the classroom",
         ],
         correctAnswer: "Democratization of invention and learning",
-        keyTriggers: ["ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown"],
+        keyTriggers: ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"],
       },
       {
         question: "What innovation is highlighted in low-tech making?",
@@ -53,7 +53,7 @@ const Page: React.FC = () => {
           "Learning by embodiment",
         ],
         correctAnswer: "Designing and building electronics on paper",
-        keyTriggers: ["ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown"],
+        keyTriggers: ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"],
       },
       {
         question: "What aspect of 3D printing is beneficial for learning?",
@@ -64,7 +64,7 @@ const Page: React.FC = () => {
           "Becoming technically proficient",
         ],
         correctAnswer: "Development of spatial reasoning skills",
-        keyTriggers: ["ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown"],
+        keyTriggers: ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"],
       },
       {
         question: "What makes constructionism different from constructivism?",
@@ -75,7 +75,7 @@ const Page: React.FC = () => {
           "There's no difference; the concepts are virtually the same thing.",
         ],
         correctAnswer: "Constructivism is less situated than constructionism.",
-        keyTriggers: ["ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown"],
+        keyTriggers: ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"],
       },
       {
         question: "How can you best design activities for classrooms?",
@@ -87,7 +87,7 @@ const Page: React.FC = () => {
         ],
         correctAnswer:
           "Design for engagement by promoting interest-driven design",
-        keyTriggers: ["ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown"],
+        keyTriggers: ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"],
       },
       {
         question: "Resnick is from MIT Media Labs and is known for:",
@@ -98,13 +98,13 @@ const Page: React.FC = () => {
           "Erector sets",
         ],
         correctAnswer: "Scratch programming",
-        keyTriggers: ["ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown"],
+        keyTriggers: ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"],
       },
       {
         question: "Who is not an amazing Makery expert?",
         options: ["Dr. Lee", "Helen", "Jacob", "The Turtle"],
         correctAnswer: "The Turtle",
-        keyTriggers: ["ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown"],
+        keyTriggers: ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"],
       },
     ],
     []
@@ -115,13 +115,13 @@ const Page: React.FC = () => {
   //       question: "What is the capital of France?",
   //       options: ["Paris", "London", "Madrid", "Berlin"],
   //       correctAnswer: "Paris",
-  //       keyTriggers: ["ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown"], // Using arrow keys now
+  //       keyTriggers: ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"], // Using arrow keys now
   //     },
   //     {
   //       question: "What is 2+2?",
   //       options: ["3", "4", "5", "6"],
   //       correctAnswer: "4",
-  //       keyTriggers: ["ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown"],
+  //       keyTriggers: ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"],
   //     },
   //     // Add more questions here
   //   ],
@@ -164,7 +164,7 @@ const Page: React.FC = () => {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              {questions[currentQuestionIndex]?.question ? (`(${currentQuestionIndex+1} / ${questions.length})` + questions[currentQuestionIndex].question) : "Quiz Complete!"}
+              {questions[currentQuestionIndex]?.question ? (`(${currentQuestionIndex+1} / ${questions.length}) ` + questions[currentQuestionIndex].question) : "Quiz Complete!"}
             </h2>
             <p className="mt-2 text-lg leading-8 text-gray-600">
               Your Score: {score}
